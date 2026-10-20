@@ -1,6 +1,7 @@
 QT += widgets
 
 CONFIG += c++17
+CONFIG += console # для отображения qDebug() в консоли
 
 # You can make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
@@ -19,6 +20,7 @@ FORMS += \
 
 TRANSLATIONS += \
     GreenHouse_ru_RU.ts
+
 CONFIG += lrelease
 CONFIG += embed_translations
 
