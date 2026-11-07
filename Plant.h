@@ -26,8 +26,8 @@ public:
     Plant() = default;
 
     Plant(int id, const QString& species, LightRequirement light,
-        WateringFrequency water) : m_id(id), m_species(species),
-        m_light(light), m_watering(water) {}
+        WateringFrequency water, const QString& imagePath) : m_id(id), m_species(species),
+        m_light(light), m_watering(water), m_imagePath(imagePath) {}
 
     // Геттеры
     int id() const { return m_id; }
@@ -35,6 +35,7 @@ public:
     LightRequirement light() const {return m_light; }
     WateringFrequency watering() const { return m_watering; }
     QDate lastWateredDate() const { return m_lastWateredDate; }
+    QString imagePath() const {return m_imagePath; }
     int wateringIntervalDays() const { return m_wateringIntervalDays; }
     
     // Сеттеры
@@ -44,6 +45,7 @@ public:
     void setWatering(WateringFrequency water) { m_watering = water; }
     void setLastWateredDate(const QDate& date) { m_lastWateredDate = date; }
     void setWateringIntervalDays(int days) { m_wateringIntervalDays = days; }
+    void setImagePath(const QString& imagePath){ m_imagePath = imagePath; }
 
 private:
     int m_id = -1; // Идентификатор, -1 значит, что растение еще не сохранено в базе
@@ -51,6 +53,7 @@ private:
     LightRequirement m_light = LightRequirement::Medium; // Освещение
     WateringFrequency m_watering = WateringFrequency::Moderate; // Полив
     QDate m_lastWateredDate; // Для напоминаний
+    QString m_imagePath; // Путь к изображению
     int m_wateringIntervalDays = 7; // Интервал полива, по умолчанию раз в неделю
 };
 

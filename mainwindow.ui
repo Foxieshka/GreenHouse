@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>988</width>
+    <height>492</height>
    </rect>
   </property>
   <property name="font">
@@ -19,35 +19,58 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableWidget" name="tableWidget">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>100</y>
-      <width>501</width>
-      <height>311</height>
+      <x>10</x>
+      <y>10</y>
+      <width>631</width>
+      <height>411</height>
      </rect>
     </property>
-    <column>
-     <property name="text">
-      <string>ID</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Вид</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Освещение</string>
-     </property>
-    </column>
-    <column>
-     <property name="text">
-      <string>Полив</string>
-     </property>
-    </column>
+    <layout class="QVBoxLayout" name="tableLayout">
+     <item>
+      <widget class="QTableWidget" name="tableWidget">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <attribute name="verticalHeaderDefaultSectionSize">
+        <number>90</number>
+       </attribute>
+       <attribute name="verticalHeaderShowSortIndicator" stdset="0">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Вид</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Свет</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Полив</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Изображение</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -55,57 +78,127 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>988</width>
      <height>28</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_2">
-    <property name="title">
-     <string>Выход</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menu_3">
-    <property name="title">
-     <string>Растения</string>
-    </property>
-    <addaction name="actionAdd"/>
-    <addaction name="separator"/>
-    <addaction name="actionEdit"/>
-    <addaction name="separator"/>
-    <addaction name="actionDelete"/>
-    <addaction name="separator"/>
-   </widget>
-   <widget class="QMenu" name="menu_4">
-    <property name="title">
-     <string>Напоминания</string>
-    </property>
-    <addaction name="actionShow"/>
-   </widget>
-   <addaction name="menu_2"/>
-   <addaction name="menu_3"/>
-   <addaction name="menu_4"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionEdit">
-   <property name="text">
-    <string>Редактировать</string>
+  <widget class="QDockWidget" name="dockEditor">
+   <property name="minimumSize">
+    <size>
+     <width>320</width>
+     <height>284</height>
+    </size>
    </property>
-  </action>
-  <action name="actionDelete">
-   <property name="text">
-    <string>Удалить</string>
+   <property name="maximumSize">
+    <size>
+     <width>320</width>
+     <height>10000</height>
+    </size>
    </property>
-  </action>
-  <action name="actionShow">
-   <property name="text">
-    <string>Показать</string>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <property name="minimumSize">
+     <size>
+      <width>401</width>
+      <height>0</height>
+     </size>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_3">
+     <item>
+      <widget class="QLabel" name="speciesLabel">
+       <property name="text">
+        <string>Вид растения</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="editSpecies">
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lightLabel">
+       <property name="text">
+        <string>Освещение</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="lightCombo">
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="waterLabel">
+       <property name="text">
+        <string>Полив:</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="waterCombo">
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="saveButton">
+       <property name="maximumSize">
+        <size>
+         <width>300</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Сохранить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
    </property>
-  </action>
-  <action name="actionAdd">
-   <property name="text">
-    <string>Добавить</string>
-   </property>
-  </action>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
  </widget>
  <resources/>
  <connections/>

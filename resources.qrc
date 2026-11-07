@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/logo.svg</file>
+        <file>images/periwinkle.jpg</file>
+        <file>images/add_icon.svg</file>
+        <file>images/delete_icon.svg</file>
+        <file>images/edit_icon.svg</file>
+        <file>images/oleander.jpg</file>
+        <file>images/kaktus.jpg</file>
+        <file>images/empty_image.svg</file>
+        <file>images/orange.jpg</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file>fonts/Raleway/Raleway-Medium.ttf</file>
+        <file>fonts/Raleway/Raleway-Regular.ttf</file>
+    </qresource>
+</RCC>

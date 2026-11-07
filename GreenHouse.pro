@@ -13,7 +13,8 @@ SOURCES += \
 
 HEADERS += \
     Plant.h \
-    mainwindow.h
+    mainwindow.h \
+    utils.h
 
 FORMS += \
     mainwindow.ui
@@ -28,3 +29,13 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    fonts/Raleway/Raleway-Black.ttf \
+    fonts/Raleway/Raleway-Bold.ttf \
+    fonts/Raleway/Raleway-Light.ttf \
+    fonts/Raleway/Raleway-Medium.ttf \
+    images/logo.svg
+
+RESOURCES += \
+    resources.qrc
